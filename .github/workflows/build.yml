@@ -45,7 +45,7 @@ jobs:
       run: |
         cd ClickHouse
         mkdir build-arm64
-        CC=clang-11 CXX=clang++-11 cmake . -Bbuild-arm64 -DCMAKE_TOOLCHAIN_FILE=cmake/linux/toolchain-aarch64.cmake -DENABLE_LDAP=0 -DENABLE_SSL=OFF -DENABLE_TCMALLOC=OFF -DENABLE_JEMALLOC=OFF -DCMAKE_BUILD_TYPE=RELEASE
+        CC=clang-11 CXX=clang++-11 cmake . -Bbuild-arm64 -DHAVE_SSE41=0 -DHAVE_SSE42=0 -DCMAKE_TOOLCHAIN_FILE=cmake/linux/toolchain-aarch64.cmake -DENABLE_LDAP=0 -DENABLE_SSL=0 =DENABLE_MYSQL=1  -DENABLE_PROTOBUF=1 -DENABLE_GRPC=1 -DCMAKE_BUILD_TYPE=RELEASE
         ninja -C build-arm64
     - name: Create Release
       id: create_release

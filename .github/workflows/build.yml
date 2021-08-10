@@ -26,7 +26,7 @@ jobs:
     - name: Install
       run: |
         sudo apt-get update
-        sudo apt-get install wget tar cmake ninja-build clang python3 build-essential libpthread-stubs0-dev clang-11 gcc-multilib lld
+        sudo apt-get install wget tar cmake ninja-build clang python3 build-essential libpthread-stubs0-dev clang-8 gcc-multilib lld openssl
     - name: Git
       run: |
         git clone https://github.com/ClickHouse/ClickHouse.git
@@ -45,7 +45,7 @@ jobs:
       run: |
         cd ClickHouse
         mkdir build-arm64
-        CC=clang-11 CXX=clang++-11 cmake . -Bbuild-arm64 -DCMAKE_TOOLCHAIN_FILE=cmake/linux/toolchain-aarch64.cmake -DCMAKE_BUILD_TYPE=RELEASE
+        CC=clang-8 CXX=clang++-8 cmake . -Bbuild-arm64 -DCMAKE_TOOLCHAIN_FILE=cmake/linux/toolchain-aarch64.cmake -DCMAKE_BUILD_TYPE=RELEASE
         ninja -C build-arm64
     - name: Create Release
       id: create_release

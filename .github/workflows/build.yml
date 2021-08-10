@@ -6,7 +6,7 @@ on:
       remote_ref:
         description: 'Remote reference'
         required: true
-        default: 'v20.8.18.32-lts'
+        default: 'v20.3.21.2-lts'
       local_ref:
         description: 'Local reference'
         required: true
